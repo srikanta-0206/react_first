@@ -1,12 +1,14 @@
 import Card from "./components/Card";
-import "./components/net.css"
-
+import styles from "./components/netflix.module.css"; // ✅ path from src
+import { Ev } from "./components/event";
 
 export const App = () => {
   return (
-    <section className = "container"  >
-      <h1 className="card-heading">List of Series </h1>
+    <section className={styles.container}>
+      <h1 className={styles.cardHeading}>List of Series</h1>
       <Card />
+      <Ev/>
     </section>
+    
   );
 };
