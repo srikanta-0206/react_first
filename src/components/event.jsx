@@ -1,7 +1,7 @@
 export const Ev = () => {
 
 
- function handleButtonClick() {
+const handleButtonClick=() =>{
     alert("hey ")
  }
     return(
