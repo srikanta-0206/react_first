@@ -14,12 +14,12 @@
 //     </section>
 //   );
 // };
-import  { States } from "./components/HOOKS/Rat"
+// import  { States } from "./components/HOOKS/Rat"
 
-export const App = () => {
-  return (
-    <>
-    <States/>
-    </>
-  )
-}
+// export const App = () => {
+//   return (
+//     <>
+//     <States/>
+//     </>
+//   )
+// }
