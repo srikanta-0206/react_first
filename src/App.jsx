@@ -1,4 +1,3 @@
-
 // import Card from "./components/Card"; // path from src
 // import styles from "./components/netflix.module.css";
 // import { Ev } from "./components/event";
@@ -22,4 +21,24 @@
 //     <States/>
 //     </>
 //   )
+// // }
+// import { ToggleSwitch } from "./projects/ToggleSwitch/ToggleSwitch"
+
+// export const App = () => {
+//   return (
+
+//     <section className="section">
+//    <ToggleSwitch/>
+//     </section>
+//   )
 // }
+
+import { Todo } from "./projects/Todo/Todo";
+
+export const App = () => {
+  return (
+    <section className="first">
+      <Todo />
+    </section>
+  );
+};

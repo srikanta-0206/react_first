@@ -1,0 +1,212 @@
+/* 🌈 Animated gradient background */
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2, #6a11cb, #2575fc);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🎨 Background animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 📦 App container */
+.app {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.65);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Fade in effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔹 Header */
+.header {
+  text-align: center;
+}
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(90deg, #00ffcc, #ff66ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* subtle static glow instead of heavy animation */
+  text-shadow: 0 0 3px rgba(0, 255, 204, 0.4), 0 0 5px rgba(255, 102, 255, 0.4);
+  animation: none;
+}
+
+/* 🔹 Clock */
+.clock {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* 🔹 Form */
+.form-box {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.08);
+  gap: 10px;
+}
+
+/* Input */
+.input-button-container {
+  display: flex;
+  width: 100%;
+}
+.input-button-container input[type="text"] {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.input-button-container input[type="text"]:focus {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+/* Add button with ripple effect */
+.btn-add {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #00ffcc, #00cc88);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn-add:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,255,136,0.4);
+}
+.btn-add:active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  animation: ripple 0.6s ease;
+}
+@keyframes ripple {
+  from { transform: scale(0); opacity: 0.6; }
+  to { transform: scale(2); opacity: 0; }
+}
+
+/* 🔹 Task section */
+.task-section { width: 100%; }
+.task-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+
+/* Task item with pop-in animation */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  animation: itemPop 0.3s ease;
+}
+.task-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.15);
+}
+@keyframes itemPop {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Task text */
+.task-item span { flex: 1; word-break: break-word; transition: color 0.3s ease, text-decoration 0.3s ease; }
+.task-item.checked span { text-decoration: line-through; color: #bbb; }
+
+/* Action buttons */
+.task-actions { display: flex; gap: 8px; }
+
+/* Check button subtle hover */
+.task-actions button:first-child {
+  background: rgba(0,255,136,0.15);
+  border: 1px solid rgba(0,255,136,0.6);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; justify-content: center; align-items: center;
+  font-size: 1.2rem; color: #00ff88;
+  cursor: pointer; transition: all 0.3s ease;
+}
+.task-actions button:first-child:hover { transform: scale(1.1); }
+
+/* Delete button subtle hover */
+.task-actions button:last-child {
+  background: rgba(255,77,77,0.15);
+  border: 1px solid rgba(255,77,77,0.6);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; justify-content: center; align-items: center;
+  font-size: 1.2rem; color: #ff4d4d;
+  cursor: pointer; transition: all 0.3s ease;
+}
+.task-actions button:last-child:hover { transform: scale(1.1); }
+
+/* Clear all button with glow */
+.btn-clear {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none; border-radius: 12px;
+  background: linear-gradient(135deg,#ff4d4d,#cc0000);
+  color: #fff; font-weight: 600;
+  cursor: pointer; width: 100%;
+  transition: all 0.3s ease;
+}
+.btn-clear:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255,77,77,0.5);
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 500px) {
+  .app { padding: 25px 20px; }
+  .title { font-size: 2rem; }
+  .input-button-container input[type="text"] { font-size: 0.9rem; }
+  .btn-add { font-size: 0.9rem; padding: 10px 14px; }
+}
